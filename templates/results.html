@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+	<h1>
+		<a href="http://www.stompboxes.co.uk/forum/index.php">D*A*M Forum</a>
+		<a href="http://stompboxes.co.uk/forum/viewforum.php?f=9">Buy Sell Trade</a> Scrape
+	</h1>
+
+	{% if posts %}
+		<ul id="posts">
+			{% for post in posts %}
+				<li>
+					<h2><a href="{{ post.link }}">{{ post.title }}</a></h2>
+					<p>posted by <a href="{{post.privateMessageLink}}" target="_blank">{{ post.author }}</a></p>
+					<div class="images">
+						{% for img in post.images %}
+							<img src="{{ img }}"/>
+						{% endfor %}
+					</div>
+					<p class="content">{{ post.body | safe }}</p>
+				</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+</body>
+</html>

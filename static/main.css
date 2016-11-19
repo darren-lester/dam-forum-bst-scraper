@@ -1,0 +1,13 @@
+h1 {
+	text-align: center;
+}
+
+img {
+	/*Keep images a reasonably small size*/
+	max-width: 200px;
+	max-height: 200px;
+}
+
+#posts {
+	list-style-type: none;
+}
