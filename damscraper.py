@@ -79,7 +79,7 @@ def _get_post_details(post_listing):
 def _get_post_author(post_page):
     """Scrape the author name from a post."""
 
-    author = CSSSelector("dl.postprofile a")(post_page)[1].text_content()
+    author = CSSSelector(".username")(post_page)[1].text_content()
     return author
 
 def _get_post_content(post_page):
